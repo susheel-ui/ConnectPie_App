@@ -53,6 +53,7 @@ public class home_user extends AppCompatActivity {
             getuserDataApiCall(usrid);
 
         }
+        loadFragment(homeFragment,true);
 
 
 
@@ -66,7 +67,7 @@ public class home_user extends AppCompatActivity {
 
 
 
-        loadFragment(homeFragment,true);
+
 
 
         new Handler().postDelayed(new Runnable() {
