@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:id="@+id/btmNavHome"
+    android:title="home"
+    android:icon="@drawable/home_icon"
+    android:checkable="true"
+    />
+    <item android:id="@+id/btmNavSearch"
+        android:title="search"
+        android:icon="@drawable/search"
+        android:checkable="true"
+        />
+    <item android:id="@+id/btmNavAddFriend"
+        android:title="Friend Requests"
+        android:icon="@drawable/add_icon"
+        android:checkable="true"
+        />
+    <item android:id="@+id/btmNavUser"
+        android:title="User"
+        android:icon="@drawable/user_icon"
+        android:checkable="true"
+        />
+</menu>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/backgroundlogin"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:id="@+id/textlogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50sp"
+        android:layout_marginTop="100sp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Login"
+
+        android:textColor="@color/basicwhite"
+        android:textSize="50sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TILuserid"
+        style="@style/LoginTextInputLayoutStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/white"
+        android:hint="User id"
+        android:textColorHint="@color/primaryblue"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxStrokeColor="@color/primaryblue"
+        app:boxStrokeWidth="3dp"
+        app:endIconDrawable="@drawable/baseline_person_24"
+        app:endIconMode="custom"
+        app:endIconTint="@color/secondryred"
+        app:hintAnimationEnabled="true"
+        app:layout_constraintBottom_toTopOf="@+id/TILPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/EtLogInUserId"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/poppins_light"
+            android:textSize="15sp"
+
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TILPassword"
+        style="@style/LoginTextInputLayoutStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="100dp"
+        android:backgroundTint="@color/white"
+        android:hint="Password"
+
+        android:textColorHint="@color/primaryblue"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxStrokeColor="@color/primaryblue"
+        app:boxStrokeWidth="3dp"
+        app:endIconDrawable="@drawable/baseline_password_24"
+        app:endIconMode="custom"
+        app:endIconTint="@color/secondryred"
+        app:hintAnimationEnabled="true"
+        app:layout_constraintBottom_toTopOf="@+id/btnlogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+
+            android:id="@+id/EtLogInPass"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/poppins_light"
+            android:inputType="textPassword"
+            android:textSize="15sp"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+
+
+        android:id="@+id/btnlogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Log in"
+        android:layout_margin="20dp"
+        android:fontFamily="@font/poppins_medium"
+        android:padding="10dp"
+        app:cornerRadius="10dp"
+        android:elevation="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintBottom_toTopOf="@id/TvbtnnotAccount"
+        />
+
+    <TextView
+        android:id="@+id/TvbtnnotAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Not have an account /\nNew Account"
+        android:textColor="@color/secondryred"
+
+        android:layout_marginBottom="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+
+        />
+    <TextView
+        android:id="@+id/error_showTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/TILPassword"
+        app:layout_constraintTop_toBottomOf="@id/TILPassword"
+        android:textColor="@color/secondryred"
+
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TvbtnnotAccount"
+
+        android:gravity="center"
+
+        >
+
+        <androidx.constraintlayout.utils.widget.ImageFilterButton
+            android:id="@+id/btngoogle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:src="@drawable/google_icon"
+            android:backgroundTint="@color/white"
+
+
+
+            />
+        <androidx.constraintlayout.utils.widget.ImageFilterButton
+            android:id="@+id/btnfacebook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/facebook"
+            android:backgroundTint="@color/white"
+
+
+
+            />
+        <androidx.constraintlayout.utils.widget.ImageFilterButton
+            android:id="@+id/btnlinkedin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+
+            android:src="@drawable/linkedin_icon"
+
+
+
+            />
+        <androidx.constraintlayout.utils.widget.ImageFilterButton
+            android:id="@+id/btngithub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+
+            android:src="@drawable/github_icon"
+
+
+
+            />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
