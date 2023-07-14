@@ -1,6 +1,7 @@
 package com.example.connectpie;
 
 import android.annotation.SuppressLint;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -155,12 +156,17 @@ public class HomeFragment extends Fragment {
     }
     class ViewHolderPosts extends RecyclerView.ViewHolder{
         TextView username,Likes,caption,username_withcaption;
+        ImageView likebtn,comentbtn,sharebtn,savebtn;
         public ViewHolderPosts(@NonNull View itemView) {
             super(itemView);
             username = itemView.findViewById(R.id.usernametop);
             Likes = itemView.findViewById(R.id.tvuserlikes);
             caption = itemView.findViewById(R.id.captionshowtv);
             username_withcaption = itemView.findViewById(R.id.tvuseridshowbottom);
+            likebtn = itemView.findViewById(R.id.likebtn);
+            comentbtn = itemView.findViewById(R.id.comentbtn);
+            sharebtn = itemView.findViewById(R.id.sharebtn);
+            savebtn = itemView.findViewById(R.id.savebtn);
         }
     }
 
@@ -187,6 +193,13 @@ public class HomeFragment extends Fragment {
                 holder.username.setText(obj.getUsername());
                 holder.Likes.setText(obj.getLikes());
                 holder.caption.setText(obj.getCaptions());
+                holder.likebtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        holder.likebtn.setImageResource(R.drawable.liked_btn);
+                    }
+                });
+
         }
 
         @Override
@@ -217,7 +230,7 @@ public class HomeFragment extends Fragment {
             Friendlist_withstatus obj = Friendlistl.get(position);
             holder.textviewName.setText(obj.getName());
             if(obj.getStatus().equals("inactive")){
-                holder.status.setBackgroundColor(getResources().getColor(R.color.black,null));
+                holder.status.setBackgroundColor(getResources().getColor(R.color.white,null));
             }
         }
 

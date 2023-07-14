@@ -18,6 +18,9 @@ import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface Api {
+
+    @GET("home/")
+    Call<Void> Servertest();
     @POST("users/login")
     Call<Void> login(@Body login_info info);
 

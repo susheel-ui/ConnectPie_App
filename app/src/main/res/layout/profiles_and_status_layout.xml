@@ -6,10 +6,11 @@
     android:orientation="horizontal">
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView1"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_margin="15dp"
-        app:cardCornerRadius="45dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        app:cardCornerRadius="25dp"
         app:cardElevation="10dp"
 
         >
@@ -18,12 +19,13 @@
             android:layout_height="match_parent"
             >
 
-            <androidx.appcompat.widget.AppCompatImageView
+            <ImageView
                 android:id="@+id/imageDp"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintVertical_weight="2"
-                android:src="@drawable/person"
+                android:padding="15dp"
+                android:src="@drawable/person_icontwo"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -37,7 +39,7 @@
         android:layout_width="10dp"
         android:layout_height="10dp"
         app:cardCornerRadius="5dp"
-        android:backgroundTint="@color/green"
+        app:cardBackgroundColor="@color/green"
         android:layout_alignBottom="@id/cardView1"
         android:layout_alignEnd="@id/cardView1"
         android:layout_marginRight="0dp"
@@ -49,9 +51,7 @@
        android:layout_height="wrap_content"
        android:text="xxxx xxxx"
        android:textSize="15dp"
-       android:layout_alignTop="@id/cardView1"
-       android:layout_marginTop="75dp"
-       android:layout_marginStart="10dp"
+        android:layout_below="@id/cardView1"
        android:textColor="@color/black"
        android:gravity="center"
        />

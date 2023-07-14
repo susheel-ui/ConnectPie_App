@@ -17,7 +17,7 @@
         />
     <item android:id="@+id/btmNavUser"
         android:title="User"
-        android:icon="@drawable/user_icon"
+        android:icon="@drawable/person_icontwo"
         android:checkable="true"
         />
 </menu>

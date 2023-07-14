@@ -32,18 +32,17 @@
         android:id="@+id/main_page_appbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/primaryblue"
         >
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:title="ConnectPie"
-            app:titleTextColor="@color/primaryblue"
+            app:titleTextColor="@color/white"
             app:menu="@menu/more_menu"
             />
     </com.google.android.material.appbar.AppBarLayout>
