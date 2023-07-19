@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
                         if(userid.length()>0 && password.length()>0){
-                            if(flage_temp=="yes"){
+                            if(flage_temp.equals("yes")){
                                 if(userid.equals("susheel12")&&password.equals("susheel123")){
                                     SharedPreferences.Editor editor = pref.edit();
                                     editor.putString("temp_userid",userid);
