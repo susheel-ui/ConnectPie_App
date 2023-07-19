@@ -4,7 +4,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
-    public static String BASE_URL = "http://192.168.29.160:9090/connectpie/";
+    private static String BASE_URL = "http://192.168.29.160:9090/connectpie/";
     public static RetrofitClient restrofitClient;
     public static Retrofit retrofit;
 

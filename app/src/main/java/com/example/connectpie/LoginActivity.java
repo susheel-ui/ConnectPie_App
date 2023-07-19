@@ -27,12 +27,16 @@ import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
     ActivityLoginBinding binding;
+    SharedPreferences pref;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        pref = getApplicationContext().getSharedPreferences("LogDetails",MODE_PRIVATE);
+        String flage_temp= pref.getString("temp_data",null);
 
         binding.btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,20 +45,43 @@ public class LoginActivity extends AppCompatActivity {
                 String userid = binding.EtLogInUserId.getText().toString();
                 String password = binding.EtLogInPass.getText().toString();
 
+                if(flage_temp == null){
+                    Log.d(TAG, "onClick: problem in flagetemp");
+                }
+                else{
 
-                if(userid.length()>0&& password.length()>0){
-                    login_info info = new login_info(userid,password);
-                    ApiCallLogin(info);
-                }else{
-                    if(userid.length()<=0 ){
-                        Log.d(TAG, "onClick: "+"fill user id");
-                        binding.TILuserid.setEndIconDrawable(R.drawable.baseline_star_rate_24);
-                    }
-                    if(password.length()<=0){
-                        binding.TILPassword.setEndIconDrawable(R.drawable.baseline_star_rate_24);
-                    }
+
+                        if(userid.length()>0 && password.length()>0){
+                            if(flage_temp=="yes"){
+                                if(userid.equals("susheel12")&&password.equals("susheel123")){
+                                    SharedPreferences.Editor editor = pref.edit();
+                                    editor.putString("temp_userid",userid);
+                                    editor.putString("temp_password",password);
+                                    editor.apply();
+                                    Intent in = new Intent(LoginActivity.this,home_user.class);
+                                    startActivity(in);
+                                }else{
+                                    binding.errorShowTV.setText("Incorrect id or password");
+                                }
+                            }else{
+                                login_info info = new login_info(userid,password);
+                                ApiCallLogin(info);
+                            }
+
+                        }else{
+                            if(userid.length()<=0 ){
+                                Log.d(TAG, "onClick: "+"fill user id");
+                                binding.TILuserid.setEndIconDrawable(R.drawable.baseline_star_rate_24);
+                            }
+                            if(password.length()<=0){
+                                binding.TILPassword.setEndIconDrawable(R.drawable.baseline_star_rate_24);
+                            }
+
+                        }
+
 
                 }
+
             }
         });
 

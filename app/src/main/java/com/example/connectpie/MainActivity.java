@@ -65,11 +65,18 @@ public class MainActivity extends AppCompatActivity {
     }
     public void alert(){
         AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
-        alert.setMessage("Server is off");
+        alert.setMessage("Server is off \n there will be temp data show press !");
         alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                finish();
+                // temp data parse
+                Intent in = new Intent(MainActivity.this,LoginActivity.class);
+                SharedPreferences preferences = getApplicationContext().getSharedPreferences("LogDetails",MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("temp_data","yes");
+                editor.apply();
+                startActivity(in);
+//                finish();
             }
         });
         alert.show();
